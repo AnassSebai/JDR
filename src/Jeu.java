@@ -1,11 +1,12 @@
-import Personnage.*;
-public class Jeu {
-    public static void main(String[] args) {
-        Guerrier arion = new Guerrier();
-        Mage mage = new Mage();
-        System.out.println(arion.getForce());
-        System.out.println(mage.getDescription());
+//Gestion du jeu
 
-        
+
+public class Jeu {
+    // Votre logique de jeu ici
+    
+    public void demarrer() {
+        // Démarrez le jeu ici
     }
+    
+    // Autres méthodes pour gérer le jeu
 }
