@@ -1,8 +1,10 @@
-package Personnage;
+package Personnage.Hero;
+
+import Personnage.Personnage;
 
 import java.util.List;
 
-public class Human extends Personnage {
+public class Hero extends Personnage {
     private String alignement;
     private String classe;
     private List<String> inventaire;
@@ -30,6 +32,8 @@ public class Human extends Personnage {
     public void setInventaire(List<String> inventaire) {
         this.inventaire = inventaire;
     }
+
+
 
     @Override
     public void getDescriptionPersonnage() {
