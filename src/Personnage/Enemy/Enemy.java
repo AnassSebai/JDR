@@ -37,7 +37,7 @@ Une piste pour la création des ennemis:
 public class Enemy extends Personnage {
 
 
-    public Enemy(String nom, int pointsDeVie, int experience) {
+    public Enemy(int str, int dex, int intel, int wis, int con, String nom, int pointsDeVie, int experience) {
         this.setNom(nom);
         this.setPointsDeVie(pointsDeVie);
         this.setExperience(experience);

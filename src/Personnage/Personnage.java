@@ -1,18 +1,25 @@
 package Personnage;
 
+import Item.*;
+
+import java.util.List;
 import java.util.Random;
 
 public abstract class Personnage {
     private String nom;
-    private String description;
+    private String description; // c'est necessaire?
     private int experience;
     private int niveau;
     private int pointsDeVie;
     private int pointsDeMagie;
+    // on calcule le baseAttackDamage avec force et agilite
     private int force;
     private int agilite;
     private int intelligence;
-    private int charisme;
+    private int wisdom;
+    private int constitution;
+    private List<Item> inventory;
+    private Weapon weapon;
 
     public void setNom(String nom) {
         this.nom = nom;
@@ -46,14 +53,32 @@ public abstract class Personnage {
         this.intelligence = intelligence;
     }
 
-    public void setCharisme(int charisme) {
-        this.charisme = charisme;
+    public void setWisdom(int wisdom) {
+        this.wisdom = wisdom;
     }
-
     public void setExperience(int experience) {
         this.experience = experience;
     }
 
+    public int getConstitution() {
+        return constitution;
+    }
+
+    public void setConstitution(int constitution) {
+        this.constitution = constitution;
+    }
+
+    public List<Item> getInventory() {
+        return (List<Item>) inventory;
+    }
+
+    public void setInventory(List<Item> inventory) {
+        this.inventory = inventory;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
 
     public int getNiveau() {
         return niveau;
@@ -88,12 +113,16 @@ public abstract class Personnage {
         return this.intelligence;
     }
 
-    public int getCharisme() {
-        return this.charisme;
+    public int getWisdom() {
+        return this.wisdom;
     }
 
     public int getExperience() {
         return experience;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
     }
 
     // Méthode pour attaquer

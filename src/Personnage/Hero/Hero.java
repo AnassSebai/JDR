@@ -1,14 +1,11 @@
 package Personnage.Hero;
 
+import Item.Weapon;
 import Personnage.Personnage;
-
-import java.util.List;
 
 public class Hero extends Personnage {
     private String alignement;
     private String classe;
-    private List<String> inventaire;
-
     public String getAlignement() {
         return alignement;
     }
@@ -25,15 +22,6 @@ public class Hero extends Personnage {
         this.classe = classe;
     }
 
-    public List<String> getInventaire() {
-        return inventaire;
-    }
-
-    public void setInventaire(List<String> inventaire) {
-        this.inventaire = inventaire;
-    }
-
-
 
     @Override
     public void getDescriptionPersonnage() {
@@ -46,9 +34,7 @@ public class Hero extends Personnage {
         System.out.println("Force : " + getForce());
         System.out.println("Agilité : " + getAgilite());
         System.out.println("Intelligence : " + getIntelligence());
-        System.out.println("Charisme : " + getCharisme());
+        System.out.println("Charisme : " + getWisdom());
         System.out.println("Alignement : " + getAlignement());
-        System.out.println("Inventaire : " + getInventaire());
     }
-
 }
