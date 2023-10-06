@@ -1,6 +1,6 @@
 package Personnage;
 //1er personnage 
-public class Barbare extends Personnage {
+public class Barbare extends Human {
     private static final int PM_INITIAL = 5;
     //constructeur 
     public Barbare() {

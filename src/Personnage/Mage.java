@@ -1,6 +1,6 @@
 package Personnage;
 //4eme personnage 
-public class Mage extends Personnage {
+public class Mage extends Human {
     private static final int PM_INITIAL = 20;
 
     public Mage() {

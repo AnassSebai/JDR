@@ -21,7 +21,7 @@ Le projet est organisé en plusieurs classes Java pour gérer différentes parti
 
 - `Personnage.java` : La classe représentant les personnages jouables du jeu, avec leurs caractéristiques telles que le nom, la classe, les points de vie, etc.
 
-- `Ennemi.java` : La classe représentant les ennemis que les personnages doivent affronter, avec leurs caractéristiques telles que le nom, les points de vie, etc.
+- `Personnage.Enemy.java` : La classe représentant les ennemis que les personnages doivent affronter, avec leurs caractéristiques telles que le nom, les points de vie, etc.
 
 - D'autres classes : Vous pouvez ajouter des classes supplémentaires pour représenter les aventures, les lieux, les quêtes, etc.
 

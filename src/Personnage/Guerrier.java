@@ -1,6 +1,6 @@
 package Personnage;
 //2eme personnage 
-public class Guerrier extends Personnage {
+public class Guerrier extends Human {
     private static final int PM_INITIAL = 5;
 
     public Guerrier() {
