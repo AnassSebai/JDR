@@ -27,7 +27,6 @@ public class Hero extends Personnage {
     public void getDescriptionPersonnage() {
         System.out.println("Nom : " + getNom());
         System.out.println("Classe : " + getClasse());
-        System.out.println("Description : " + getDescription());
         System.out.println("Niveau : " + getNiveau());
         System.out.println("Points de Vie (PV) : " + getPointsDeVie());
         System.out.println("Points de Magie (PM) : " + getPointsDeMagie());

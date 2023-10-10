@@ -11,7 +11,6 @@ public class GestionnaireHeros {
         Hero mage = new Hero();
         mage.setNom("Arion");
         mage.setClasse("Mage");
-        mage.setDescription("Arion est un mage puissant et mystérieux...");
         mage.setNiveau(1);
         mage.setPointsDeVie(60);
         mage.setPointsDeMagie(20);
@@ -27,7 +26,6 @@ public class GestionnaireHeros {
         Hero archer = new Hero();
         archer.setNom("Lyra");
         archer.setClasse("Archer");
-        archer.setDescription("Lyra est une éclaireuse habile, connue pour sa précision légendaire...");
         archer.setNiveau(1);
         archer.setPointsDeVie(50);
         archer.setPointsDeMagie(5);
@@ -43,7 +41,6 @@ public class GestionnaireHeros {
         Hero guerrier = new Hero();
         guerrier.setNom("Cedric");
         guerrier.setClasse("Guerrier");
-        guerrier.setDescription("Sir Cedric est un guerrier courageux, vêtu d'une armure lourde étincelante...");
         guerrier.setNiveau(2);
         guerrier.setPointsDeVie(90);
         guerrier.setPointsDeMagie(5);
@@ -59,7 +56,6 @@ public class GestionnaireHeros {
         Hero barbare = new Hero();
         barbare.setNom("Grondar");
         barbare.setClasse("Barbare");
-        barbare.setDescription("Grondar est un colosse imposant, doté de muscles puissants et d'une stature impressionnante...");
         barbare.setNiveau(1);
         barbare.setPointsDeVie(100);
         barbare.setPointsDeMagie(5);

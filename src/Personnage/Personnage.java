@@ -7,7 +7,6 @@ import java.util.Random;
 
 public abstract class Personnage {
     private String nom;
-    private String description; // c'est necessaire?
     private int experience;
     private int niveau;
     private int pointsDeVie;
@@ -23,10 +22,6 @@ public abstract class Personnage {
 
     public void setNom(String nom) {
         this.nom = nom;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public void setNiveau(int niveau) {
@@ -56,6 +51,7 @@ public abstract class Personnage {
     public void setWisdom(int wisdom) {
         this.wisdom = wisdom;
     }
+
     public void setExperience(int experience) {
         this.experience = experience;
     }
@@ -95,11 +91,6 @@ public abstract class Personnage {
     public String getNom() {
         return this.nom;
     }
-
-    public String getDescription() {
-        return this.description;
-    }
-
 
     public int getForce() {
         return this.force;
