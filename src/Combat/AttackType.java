@@ -2,5 +2,7 @@ package Combat;
 
 public enum AttackType {
     MAGICAL,
-    PHYSICAL
+    PHYSICAL,
+    HEAVY,
+    LIGHT
 }

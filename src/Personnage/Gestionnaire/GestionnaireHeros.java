@@ -12,7 +12,7 @@ public class GestionnaireHeros {
         mage.setNom("Arion");
         mage.setClasse("Mage");
         mage.setNiveau(1);
-        mage.setPointsDeVie(60);
+        mage.setPointsDeVie(40);
         mage.setPointsDeMagie(20);
         mage.setForce(12);
         mage.setAgilite(16);
@@ -27,7 +27,7 @@ public class GestionnaireHeros {
         archer.setNom("Lyra");
         archer.setClasse("Archer");
         archer.setNiveau(1);
-        archer.setPointsDeVie(50);
+        archer.setPointsDeVie(45);
         archer.setPointsDeMagie(5);
         archer.setForce(15);
         archer.setAgilite(20);
@@ -42,13 +42,16 @@ public class GestionnaireHeros {
         guerrier.setNom("Cedric");
         guerrier.setClasse("Guerrier");
         guerrier.setNiveau(2);
-        guerrier.setPointsDeVie(90);
+        guerrier.setPointsDeVie(65);
         guerrier.setPointsDeMagie(5);
-        guerrier.setForce(22);
-        guerrier.setAgilite(15);
+        guerrier.setForce(14);
+        guerrier.setAgilite(13);
         guerrier.setIntelligence(10);
-        guerrier.setWisdom(18);
+        guerrier.setWisdom(12);
+        guerrier.setConstitution(15);
         guerrier.setAlignement("Bon");
+        Weapon greataxe = new Weapon(10, "Greataxe", "A really great axe", AttackType.PHYSICAL);
+        guerrier.setWeapon(greataxe);
         return guerrier;
     }
 
@@ -57,7 +60,7 @@ public class GestionnaireHeros {
         barbare.setNom("Grondar");
         barbare.setClasse("Barbare");
         barbare.setNiveau(1);
-        barbare.setPointsDeVie(100);
+        barbare.setPointsDeVie(75);
         barbare.setPointsDeMagie(5);
         barbare.setForce(25);
         barbare.setAgilite(8);

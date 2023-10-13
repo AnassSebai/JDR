@@ -29,6 +29,10 @@ public abstract class Personnage {
     }
 
     public void setPointsDeVie(int pointsDeVie) {
+        if(pointsDeVie<=0) {
+            this.pointsDeVie = 0;
+            return;
+        }
         this.pointsDeVie = pointsDeVie;
     }
 
