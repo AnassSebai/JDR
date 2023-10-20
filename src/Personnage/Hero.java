@@ -1,4 +1,4 @@
-package Personnage.Hero;
+package Personnage;
 
 import Item.Weapon;
 import Personnage.Personnage;

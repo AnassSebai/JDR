@@ -1,10 +1,7 @@
 package Combat;
 
 import Personnage.*;
-import Personnage.Enemy.*;
 import Services.Dice;
-
-import java.util.Random;
 
 import static java.lang.Math.round;
 

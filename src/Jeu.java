@@ -2,10 +2,10 @@
 
 
 import Combat.*;
-import Personnage.Enemy.Enemy;
-import Personnage.Gestionnaire.GestionnaireEnemies;
-import Personnage.Gestionnaire.GestionnaireHeros;
-import Personnage.Hero.Hero;
+import Personnage.Enemy;
+import Personnage.GestionnaireEnemies;
+import Personnage.GestionnaireHeros;
+import Personnage.Hero;
 
 public class Jeu {
     // Votre logique de jeu ici

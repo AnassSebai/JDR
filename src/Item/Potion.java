@@ -16,4 +16,8 @@ public class Potion extends Item {
         setDescription("Soigne " + (healingPower) + " HP.");
         setPrice(healingPower / 2);
     }
+
+    public int getHealingPower() {
+        return healingPower;
+    }
 }

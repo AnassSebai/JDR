@@ -1,9 +1,8 @@
-package Personnage.Gestionnaire;
+package Personnage;
 
 import Combat.AttackType;
 import Item.Weapon;
-import Personnage.Enemy.Enemy;
-import Personnage.Hero.Hero;
+import Personnage.Enemy;
 
 //Gestionnaire des personnage
 public class GestionnaireEnemies {
