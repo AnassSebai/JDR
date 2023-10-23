@@ -4,7 +4,7 @@
 ## compilation 
 La fonction main se trouve dans Jeu.java 
 
-## Personnage 
+## Character 
 Le dossier personnage contient nos héros# Jeu de Rôle en Java
 
 Ce projet est un exemple de jeu de rôle (JDR) en Java qui utilise l'interface utilisateur Swing pour créer une expérience interactive.
@@ -19,9 +19,9 @@ Le projet est organisé en plusieurs classes Java pour gérer différentes parti
 
 - `JeuInterface.java` : La classe de l'interface utilisateur Swing qui configure et affiche l'interface graphique du jeu.
 
-- `Personnage.java` : La classe représentant les personnages jouables du jeu, avec leurs caractéristiques telles que le nom, la classe, les points de vie, etc.
+- `Character.java` : La classe représentant les personnages jouables du jeu, avec leurs caractéristiques telles que le nom, la classe, les points de vie, etc.
 
-- `Personnage.Enemy.java` : La classe représentant les ennemis que les personnages doivent affronter, avec leurs caractéristiques telles que le nom, les points de vie, etc.
+- `Character.Enemy.java` : La classe représentant les ennemis que les personnages doivent affronter, avec leurs caractéristiques telles que le nom, les points de vie, etc.
 
 - D'autres classes : Vous pouvez ajouter des classes supplémentaires pour représenter les aventures, les lieux, les quêtes, etc.
 

@@ -1,6 +1,6 @@
 package Combat;
 
-import Personnage.Personnage;
+import Character.CharacterObject;
 import Services.*;
 
 import static java.lang.Math.round;
@@ -42,19 +42,19 @@ public class Attack {
         return 0.1;
     }
 
-    public static int getDamage(Personnage p, AttackType lightOrHeavy) {
+    public static int getDamage(CharacterObject p, AttackType lightOrHeavy) {
         AttackType magicalOrPhysical = p.getWeapon().getAttackType();
         if (lightOrHeavy == AttackType.LIGHT) return getLightAttackDamage(p, magicalOrPhysical);
         return getHeavyAttackDamage(p, magicalOrPhysical);
     }
 
-    public static double getDefense(Personnage attacked, Personnage attacker, AttackType lightOrHeavy) {
+    public static double getDefense(CharacterObject attacked, CharacterObject attacker, AttackType lightOrHeavy) {
         AttackType magicalOrPhysical = attacker.getWeapon().getAttackType();
         if (lightOrHeavy == AttackType.LIGHT) return getLightAttackDefense(attacked, magicalOrPhysical);
         return getHeavyAttackDefense(attacked, magicalOrPhysical);
     }
 
-    public static int getLightAttackDamage(Personnage p, AttackType ap) {
+    public static int getLightAttackDamage(CharacterObject p, AttackType ap) {
         int roll = Dice.roll(20);
         //System.out.println("roll = " + roll);
         double damageMod = getDamageModifier(roll);
@@ -65,15 +65,15 @@ public class Attack {
         //System.out.println("weaponRoll = " + weaponRoll);
         int damage;
         if (ap == AttackType.MAGICAL) { // Checks if it is a magic attack
-            damage = getModifier(p.getIntelligence()) + getModifier(p.getWisdom()) / 2;
-        } else damage = getModifier(p.getAgilite()) + getModifier(p.getForce());
+            damage = getModifier(p.getAttributes().getIntelligence()) + getModifier(p.getAttributes().getWisdom()) / 2;
+        } else damage = getModifier(p.getAttributes().getAgility()) + getModifier(p.getAttributes().getForce());
         if (damage < 0) damage = 0;
         //System.out.println("damage = " + damage);
         //System.out.println("damage = " + round((damage) * damageMod+ weaponRoll));
         return (int) round((damage) * damageMod + weaponRoll);
     }
 
-    public static int getHeavyAttackDamage(Personnage p, AttackType ap) {
+    public static int getHeavyAttackDamage(CharacterObject p, AttackType ap) {
         int roll = Dice.roll(20);
         //System.out.println("roll = " + roll);
         double damageMod = getDamageModifier(roll);
@@ -84,24 +84,30 @@ public class Attack {
         //System.out.println("weaponRoll = " + weaponRoll);
         int damage;
         if (ap == AttackType.MAGICAL) {
-            damage = getModifier(p.getWisdom()) + getModifier(p.getIntelligence()) / 2;
-        } else damage = getModifier(p.getForce()) + getModifier(p.getAgilite()) / 2;
+            damage = getModifier(p.getAttributes().getWisdom()) +
+                    getModifier(p.getAttributes().getIntelligence()) / 2;
+        } else damage = getModifier(p.getAttributes().getForce()) +
+                getModifier(p.getAttributes().getAgility()) / 2;
         if (damage < 0) damage = 0;
         //System.out.println("damage = " + damage);
         return (int) round((damage) * damageMod + weaponRoll);
     }
 
-    public static double getLightAttackDefense(Personnage p, AttackType ap) {
+    public static double getLightAttackDefense(CharacterObject p, AttackType ap) {
         if (ap == AttackType.MAGICAL) { // Checks if it is a magic attack
-            return (double) (0.75 * p.getIntelligence() + 0.25 * p.getConstitution())/60;
+            return (double) (0.75 * p.getAttributes().getIntelligence() +
+                    0.25 * p.getAttributes().getConstitution())/60;
         }
-        return (double) (0.75 * p.getConstitution() + 0.25 * p.getForce())/60;
+        return (double) (0.75 * p.getAttributes().getConstitution() +
+                0.25 * p.getAttributes().getForce())/60;
     }
 
-    public static double getHeavyAttackDefense(Personnage p, AttackType ap) {
+    public static double getHeavyAttackDefense(CharacterObject p, AttackType ap) {
         if (ap == AttackType.MAGICAL) {
-            return (double) (0.75 * p.getWisdom() + 0.25 * p.getConstitution())/60;
+            return (double) (0.75 * p.getAttributes().getWisdom() +
+                    0.25 * p.getAttributes().getConstitution())/60;
         }
-        return (double) (0.75 * p.getConstitution() + 0.25 * p.getAgilite())/60;
+        return (double) (0.75 * p.getAttributes().getConstitution()
+                + 0.25 * p.getAttributes().getAgility())/60;
     }
 }

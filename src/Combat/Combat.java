@@ -1,23 +1,23 @@
 package Combat;
 
-import Personnage.*;
+import Character.*;
 import Services.Dice;
 
 import static java.lang.Math.round;
 
 public class Combat {
-    final private Personnage player;
+    final private CharacterObject player;
     final private Enemy enemy;
     private static boolean playerIsNext = false;
 
-    public Combat(Personnage player, Enemy enemy) {
+    public Combat(CharacterObject player, Enemy enemy) {
         this.player = player;
         this.enemy = enemy;
     }
 
     //Une fonction qui permet de lancer le combat
     public void initCombat() {
-        System.out.println("A battle has started between " + player.getNom() + " and " + enemy.getNom() + "!");
+        System.out.println("A battle has started between " + player.getName() + " and " + enemy.getName() + "!");
 
         // Roll a dice to determine who goes first
         int initiativePlayer = Dice.roll(20);
@@ -29,9 +29,9 @@ public class Combat {
         if (initiativePlayer > initiativeEnemy) playerIsNext = true;
 
         if (playerIsNext) {
-            System.out.println(player.getNom() + " goes first!");
+            System.out.println(player.getName() + " goes first!");
         } else {
-            System.out.println(enemy.getNom() + " goes first!");
+            System.out.println(enemy.getName() + " goes first!");
         }
     }
 
@@ -45,14 +45,14 @@ public class Combat {
     }
 
     //Une fonction qui permet de faire un tour de combat
-    private void takeTurn(Personnage attacker, Personnage defender, AttackType attackType) {
+    private void takeTurn(CharacterObject attacker, CharacterObject defender, AttackType attackType) {
         int damage = Attack.getDamage(attacker, attackType);
         double defense = Attack.getDefense(defender, attacker, attackType);
         int totalDamage = (int) round(damage-defense*damage);
-        System.out.println(attacker.getNom() + " attacks " + defender.getNom() + " for " + (totalDamage) + " damage!");
-        defender.setPointsDeVie(defender.getPointsDeVie() - totalDamage);
+        System.out.println(attacker.getName() + " attacks " + defender.getName() + " for " + (totalDamage) + " damage!");
+        defender.getAttributes().setHealthPoints(defender.getAttributes().getHealthPoints() - totalDamage);
         if (!defender.isAlive()) {
-            System.out.println(defender.getNom() + " has been defeated!");
+            System.out.println(defender.getName() + " has been defeated!");
         }
         playerIsNext = !playerIsNext;
     }
@@ -61,7 +61,7 @@ public class Combat {
     //Une fonction pour calculer l'expérience gagnée par le joueur
     public int experienceGained() {
         //si tu arrives à battre un ennemi, tu gagnes son expérience
-        int experience = enemy.getExperience();
+        int experience = enemy.getAttributes().getExperience();
         return experience;
     }
 }
